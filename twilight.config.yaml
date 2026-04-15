@@ -279,7 +279,7 @@ profile:
     # 头像配置 (相对于 /public 目录)
     avatar: "/assets/images/avatar.jpg"
     # 信息配置
-    name: "Twilight"
+    name: "FamousPig"
     # 简介配置
     bio: "Hi"
     # 链接配置
@@ -290,12 +290,12 @@ profile:
             # 图标
             icon: "fa6-brands:github"
             # 链接
-            url: "https://github.com/Spr-Aachen/Twilight"
+            url: "https://github.com/Famous-Pig"
 
 # 公告配置
 announcement:
     # 公告标题
-    title: "Announcement"
+    title: "公告"
     # 公告内容
     content: "Welcome to my blog!"
     # 允许用户关闭公告
@@ -422,7 +422,7 @@ musicPlayer:
                 # 时长
                 duration: 146
     # 是否自动播放
-    autoplay: true
+    autoplay: false
 
 # 看板娘配置
 pio:
