@@ -80,7 +80,7 @@ site:
                 title: "FamousPig"
                 # 副标题，支持单个字符串或字符串数组
                 subtitle:
-                    - "FamousPig"
+                    - "Famous_Pig"
                 # 副标题打字机效果
                 typewriter:
                     # 启用副标题打字机效果
@@ -171,10 +171,10 @@ navbar:
         - # 一级导航链接 - 主页 (预设)
             "Home"
         - # 一级导航链接 - 归档 (预设)
-            "Archive"
+            "档案"
         - # 一级导航链接 - 展览 (自定义)
             # 导航名称
-            name: "Exhibition"
+            name: "展览"
             # 导航链接
             url: "/exhibition/"
             # 导航图标
@@ -184,21 +184,21 @@ navbar:
             # 子链接
             children:
                 - # 二级导航链接 - 项目 (预设)
-                    "Projects"
+                    "项目"
                 - # 二级导航链接 - 技能 (预设)
-                    "Skills"
+                    "技能"
                 - # 二级导航链接 - 历程 (预设)
-                    "Timeline"
+                    "历程"
                 - # 二级导航链接 - 日记 (预设)
-                    "Diary"
+                    "日记"
                 - # 二级导航链接 - 相册 (预设)
-                    "Albums"
+                    "相册"
                 - # 二级导航链接 - 动画 (预设)
-                    "Anime"
+                    "动画"
         - # 一级导航链接 - 好友 (预设)
-            "Friends"
+            "好友"
         - # 一级导航链接 - 关于 (预设)
-            "About"
+            "关于"
 
 # 侧边栏配置
 sidebar:
@@ -444,20 +444,20 @@ pio:
     # 对话框配置
     dialog:
         # 欢迎词
-        welcome: "Welcome!"
+        welcome: "来了!老弟~~~"
         # 触摸提示
         touch:
-            - "What are you doing?"
-            - "Stop touching me!"
-            - "Don't bully me like that!"
+            - "你干嘛?"
+            - "别扒拉我!"
+            - "GGMU!"
             - "(｡í _ ì｡)"
         # 首页提示
-        home: "Click here to go back to homepage!"
+        home: "这是传送门!"
         # 换装提示
         skin:
-            - "Want to see my new outfit?"
-            - "The new outfit looks great~"
+            - "换个皮?"
+            - "带派不，老铁!"
         # 关闭提示
-        close: "See you next time~"
+        close: "回见哈~"
         # 关于链接
         link: "https://nav.kungal.org"
