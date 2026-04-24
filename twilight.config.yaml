@@ -424,7 +424,6 @@ musicPlayer:
     # 是否自动播放
     autoplay: false
 
-# 看板娘配置
 pio:
     # 启用看板娘
     enable: true
@@ -444,20 +443,20 @@ pio:
     # 对话框配置
     dialog:
         # 欢迎词
-        welcome: "来了!老弟~~~"
+        welcome: "Welcome!"
         # 触摸提示
         touch:
-            - "你嘎哈?"
-            - "别扒拉我!"
-            - "GGMU!"
+            - "What are you doing?"
+            - "Stop touching me!"
+            - "Don't bully me like that!"
             - "(｡í _ ì｡)"
         # 首页提示
-        home: "这是传送门!"
+        home: "Click here to go back to homepage!"
         # 换装提示
         skin:
-            - "换个皮?"
-            - "带派不，老铁!"
+            - "Want to see my new outfit?"
+            - "The new outfit looks great~"
         # 关闭提示
-        close: "回见哈~"
+        close: "See you next time~"
         # 关于链接
         link: "https://nav.kungal.org"
