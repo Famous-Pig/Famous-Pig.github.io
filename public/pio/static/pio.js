@@ -90,7 +90,7 @@ var Paul_Pio = function (prop) {
         // 移除方法
         destroy: () => {
             that.initHidden();
-            localStorage.setItem("posterGirl", "0");
+            //localStorage.setItem("posterGirl", "0");
         }
     };
 
