@@ -279,9 +279,9 @@ profile:
     # 头像配置 (相对于 /public 目录)
     avatar: "/assets/images/avatar.jpg"
     # 信息配置
-    name: "FamousPig"
+    name: "名猪"
     # 简介配置
-    bio: "Hi"
+    bio: "世界人民大团结"
     # 链接配置
     links:
         - # 链接示例
