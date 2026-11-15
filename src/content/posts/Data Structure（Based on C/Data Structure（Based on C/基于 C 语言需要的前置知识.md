@@ -4,7 +4,7 @@ published: 2026-04-30
 pinned: false
 description: 数据结构基本认知与前置知识点回顾
 tags: [C语言, 编程基础, 指针, 内存管理]
-category: 技术笔记
+category: 数据结构
 licenseName: "Unlicensed"
 author: 名猪
 sourceLink: "https://famous-pig.github.io/"
