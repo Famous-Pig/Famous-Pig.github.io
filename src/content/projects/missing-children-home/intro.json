@@ -1,11 +1,11 @@
 {
     "title": "帮助失踪儿童回家",
-    "description": "",
+    "description": "精选宝贝回家官方寻亲资料，每月人工复核一次；信息以官方原帖为准，超过复核日期自动暂停展示。",
     "image": "",
     "category": "website",
-    "techStack": [],
-    "status": "planned",
-    "startDate": "",
+    "techStack": ["Astro", "Svelte"],
+    "status": "in-progress",
+    "startDate": "2026-11-15",
     "featured": false,
-    "tags": []
+    "tags": ["公益", "寻亲", "每月复核"]
 }

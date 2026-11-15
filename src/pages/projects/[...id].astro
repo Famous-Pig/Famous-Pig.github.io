@@ -6,6 +6,7 @@ import Markdown from "@components/common/markdown.astro";
 import BackwardButton from "@components/backwardButton.astro";
 import { i18n } from "@i18n/translation";
 import I18nKey from "@i18n/i18nKey";
+import SeekingCards from "@components/projects/seekingCards.svelte";
 
 export const prerender = true;
 export function getStaticPaths() {
@@ -22,6 +23,7 @@ const html = new MarkdownIt().render(project.details || "");
     <article class="card-base w-full px-6 py-6 md:px-9">
         <BackwardButton href="/projects/" text={i18n(I18nKey.projects)} />
         <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">{project.title}</h1>
+        {project.id === "missing-children-home" && <SeekingCards client:load />}
         <Markdown class="project-details">
             <div set:html={html} />
         </Markdown>
