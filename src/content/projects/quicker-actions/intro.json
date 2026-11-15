@@ -1,0 +1,11 @@
+{
+    "title": "Quicker动作",
+    "description": "Word 同文多窗：左键补齐双窗，右键指定窗口总数，自动排列，方便同一文档前后对照。",
+    "image": "",
+    "category": "software",
+    "techStack": ["C#", "Quicker", "Word COM"],
+    "status": "in-progress",
+    "startDate": "2026-11-13",
+    "featured": false,
+    "tags": ["Word", "效率工具", "窗口管理"]
+}

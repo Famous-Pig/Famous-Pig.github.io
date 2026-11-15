@@ -43,7 +43,8 @@ export async function getDirectoryTree(): Promise<DirectoryNode[]> {
         if (post.data.draft) continue;
         const parts = post.id.split('/');
         const fileName = parts.pop()!;
-        const paths = [rootMap.posts, ...parts];
+        // 目录直接列出文章，磁盘上的资源文件夹不作为导航层级。
+        const paths = [rootMap.posts];
         addNode(paths, post.data.title || fileName, `/posts/${post.id}/`);
     }
 
@@ -63,10 +64,8 @@ export async function getDirectoryTree(): Promise<DirectoryNode[]> {
     }
 
     for (const project of projectsData) {
-        const basePathParts = project.basePath?.split('/') || [];
-        if (basePathParts[0] === 'content') basePathParts.shift();
-        if (basePathParts[0] === 'projects') basePathParts[0] = rootMap.projects;
-        addNode(basePathParts, project.title || project.id, `/projects/`);
+        addNode([rootMap.projects], project.title || project.id,
+            project.details ? `/projects/${project.id}/` : `/projects/`);
     }
 
     for (const skill of skillsData) {

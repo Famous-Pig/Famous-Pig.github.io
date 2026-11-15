@@ -2,6 +2,7 @@
 import { i18n } from "@i18n/translation";
 import I18nKey from "@i18n/i18nKey";
 import ImageWrapper from "@components/common/imageWrapper.astro";
+import { url } from "@utils/url";
 
 
 export interface Props {
@@ -20,6 +21,7 @@ export interface Props {
         featured?: boolean;
         tags?: string[];
         basePath?: string;
+        details?: string;
     };
     size?: "small" | "medium" | "large";
     showImage?: boolean;
@@ -156,6 +158,12 @@ const sizeClasses = getSizeClasses(size);
         )}
         <!-- 链接 -->
         <div class="flex gap-3">
+            {project.details && (
+                <a href={url(`/projects/${project.id}/`)}
+                    class={`inline-flex items-center px-3 py-1.5 rounded-md border border-gray-400 text-gray-700 dark:border-gray-500 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors ${sizeClasses.links}`}>
+                    {i18n(I18nKey.projectDescription)}
+                </a>
+            )}
             {project.demoUrl && (
                 <a
                     href={project.demoUrl}

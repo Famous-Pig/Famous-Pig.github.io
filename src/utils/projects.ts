@@ -1,6 +1,9 @@
 // Project data configuration file
 // Used to manage data for the project display page
 const projectModules = import.meta.glob('../content/projects/**/*.json', { eager: true });
+const projectDetails = import.meta.glob<string>('../content/projects/**/details.md', {
+    eager: true, query: '?raw', import: 'default',
+});
 
 export interface Project {
     id: string;
@@ -17,10 +20,12 @@ export interface Project {
     featured?: boolean;
     tags?: string[];
     basePath?: string;
+    details?: string;
 }
 
 export const projectsData: Project[] = Object.entries(projectModules).map(([path, mod]: [string, any]) => {
-    const id = path.split('/').pop()?.replace('.json', '') || '';
+    // intro.json 使用文件夹路径作为 ID，避免多个项目都叫 intro。
+    const id = path.replace('../content/projects/', '').replace(/(?:\/intro)?\.json$/, '');
     const data = mod.default as any;
     const basePath = path.replace('../', '').replace(/\/[^/]+$/, '');
     const project: Project = {
@@ -29,6 +34,7 @@ export const projectsData: Project[] = Object.entries(projectModules).map(([path
         demoUrl: data.demoUrl ?? data.liveDemo,
         sourceUrl: data.sourceUrl ?? data.sourceCode,
         basePath,
+        details: projectDetails[path.replace(/\/[^/]+$/, '/details.md')],
     };
     return project;
 });
