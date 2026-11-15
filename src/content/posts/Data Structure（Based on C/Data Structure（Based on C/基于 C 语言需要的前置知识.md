@@ -130,12 +130,12 @@ int main(int argc, char const *argv[])
 
 
 # 字符串
- C 语言里**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">没有真正的 “字符串类型”</font>**，只有**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">字符数组</font>**
+ C 语言里**没有真正的 “字符串类型”**，只有**字符数组**
 
-**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 字符串 = 一串字符 + 结尾的 '\0'  </font>**
+**字符串 = 一串字符 + 结尾的 '\0'**
 
-+ `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">\0</font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 是</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">字符串结束标志</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">（ASCII 0）</font>
-+ <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">没有它，系统不知道字符串到哪结束</font>
++ `\0` 是**字符串结束标志**（ASCII 0）
++ 没有它，系统不知道字符串到哪结束
 
 <!-- 这是一张图片，ocr 内容为： -->
 ![](2.png)
@@ -151,7 +151,7 @@ char *str = "hello"; //指针写法，这种字符串不能修改内容，只能
 
 
 ## 字符串的输入输出
-**输出用 **`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">printf</font>`** + **`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">%s</font>`
+**输出用** `printf` **+** `%s`
 
 ```c
 #include <stdio.h>
@@ -162,7 +162,7 @@ int main() {
 }
 ```
 
-**输入****<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">用 scanf ("% s", 数组名)</font>**
+**输入用 scanf ("% s", 数组名)**
 
 ```c
 char name[20];
@@ -170,61 +170,61 @@ scanf("%s", name);
 printf("你输入的是：%s\n", name);
 ```
 
-<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">注意：</font>
+注意：
 
-+ **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">字符串前面不用 &</font>**
-+ `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">scanf</font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 遇到</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">空格 / 回车就停止</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">输入 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">zhang san</font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 只会读到 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">zhang</font>`
++ **字符串前面不用 &**
++ `scanf` 遇到**空格 / 回车就停止**输入 `zhang san` 只会读到 `zhang`
 
-**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">想输入带空格的句子</font>**
+**想输入带空格的句子**
 
 ```c
 gets(str);               // 老方法，不推荐
 fgets(str, 大小, stdin); // 安全
 ```
 
-## <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">常用字符串操作</font>
-<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">要使用这些函数，必须加头文件：</font>
+## 常用字符串操作
+要使用这些函数，必须加头文件：
 
 ```c
 #include <string.h>
 ```
 
-**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">求长度 strlen</font>**
+**求长度 strlen**
 
 ```c
 char str[] = "hello";
 int len = strlen(str);  // len = 5
 ```
 
-<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">不算结尾的 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">\0</font>`
+不算结尾的 `\0`
 
-**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">复制 strcpy</font>**
+**复制 strcpy**
 
 ```c
 char a[20];
 strcpy(a, "hello");
 ```
 
-**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">拼接 strcat</font>**
+**拼接 strcat**
 
 ```c
 strcat(a, " world");
 // a 变成 "hello world"
 ```
 
-**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">比较 strcmp</font>**
+**比较 strcmp**
 
 ```c
 strcmp(a, b);
 ```
 
-+ <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">相等返回 0</font>
-+ <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">a < b 返回负数</font>
-+ <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">a > b 返回正数</font>
++ 相等返回 0
++ a < b 返回负数
++ a > b 返回正数
 
-**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">字符串本质是数组</font>**
+**字符串本质是数组**
 
-<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">可以一个字符一个字符访问：</font>
+可以一个字符一个字符访问：
 
 ```c
 char str[] = "hello";
