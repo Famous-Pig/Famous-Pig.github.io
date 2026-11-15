@@ -8,6 +8,7 @@ import {
 import {
     siteConfig,
 } from "@/config";
+import { registerBlogTerminology } from "@i18n/blog-terminology";
 
 
 // 重新导出以保持向后兼容
@@ -119,6 +120,8 @@ export function initTranslateService(): void {
     // 检查 translate.js 是否已加载
     const translate = (window as any).translate;
     if (!translate || (window as any).translateInitialized) return;
+    // 必须在监听或首次翻译前注册；术语会先于机器翻译和历史缓存生效。
+    registerBlogTerminology(translate);
     // 配置 translate.js
     if (siteConfig.translate.service) {
         translate.service.use(siteConfig.translate.service);
