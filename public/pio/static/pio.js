@@ -181,10 +181,20 @@ var Paul_Pio = function (prop) {
 
             // 更换模型
             if (prop.model && prop.model.length > 1) {
+                elements.skin.title = "切换服装 / 模型";
+                elements.skin.setAttribute("aria-label", "切换服装 / 模型");
+                elements.skin.setAttribute("role", "button");
+                elements.skin.tabIndex = 0;
                 elements.skin.onclick = () => {
                     loadlive2d("pio", prop.model[modules.idol()]);
 
                     prop.content.skin && modules.message(prop.content.skin[1] || "新衣服真漂亮~");
+                };
+                elements.skin.onkeydown = (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        elements.skin.click();
+                    }
                 };
                 elements.skin.onmouseover = () => {
                     prop.content.skin && modules.message(prop.content.skin[0] || "想看看我的新衣服吗？");

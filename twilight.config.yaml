@@ -406,9 +406,11 @@ musicPlayer:
 pio:
     # 启用看板娘
     enable: true
-    # 模型文件路径
+    # 模型文件路径（点击看板娘旁的衣服按钮，按顺序循环切换）
     models:
         - "/pio/models/pio/model.json"
+        - "/pio/models/pio/model-pajamas.json"
+        - "/pio/models/pio/model-school.json"
     # 看板娘位置
     position: "left"
     # 看板娘宽度
