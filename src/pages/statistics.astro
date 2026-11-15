@@ -1,0 +1,35 @@
+---
+import GridLayout from "@layouts/grid.astro";
+import BackwardButton from "@components/backwardButton.astro";
+import StatsCharts from "@components/sidebar/statistics.svelte";
+import { getSortedPostsList, getCategoryList, getTagList } from "@utils/post";
+export const prerender = true;
+const [posts, categories, tags] = await Promise.all([getSortedPostsList(), getCategoryList(), getTagList()]);
+const words = [
+    { label: "公开文章", count: posts.length },
+    { label: "文章分类", count: categories.length },
+    { label: "文章标签", count: tags.length },
+    { label: "置顶文章", count: posts.filter(post => post.data.pinned).length },
+];
+---
+<GridLayout title="统计" description="博客文章、发布活动、分类与标签的统计数据。">
+    <section class="card-base p-6 md:p-9 mb-4">
+        <BackwardButton href="/" text="主页" />
+        <h1 class="text-3xl font-bold text-90 mb-3">博客统计</h1>
+        <p class="text-75 mb-6">统计当前博客公开文章的发布活动、分类和标签；数据随博客重新构建更新。</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {words.map(item => <div class="rounded-xl p-4 bg-(--btn-regular-bg)"><p class="text-3xl font-bold text-(--primary)">{item.count}</p><p class="text-sm text-75 mt-1">{item.label}</p></div>)}
+        </div>
+    </section>
+    <StatsCharts client:load {posts} {categories} {tags} side="page" fullPage={true} />
+    <div class="grid md:grid-cols-2 gap-4 mt-4">
+        <section class="card-base p-6">
+            <h2 class="text-xl font-bold text-90 mb-4">分类明细</h2>
+            <ul class="space-y-3">{categories.map(category => <li class="flex justify-between gap-3 text-75"><a href={category.url} class="hover:text-(--primary)">{category.name}</a><span>{category.count} 篇</span></li>)}</ul>
+        </section>
+        <section class="card-base p-6">
+            <h2 class="text-xl font-bold text-90 mb-4">标签明细</h2>
+            <ul class="space-y-3">{tags.map(tag => <li class="flex justify-between gap-3 text-75"><span>{tag.name}</span><span>{tag.count} 篇</span></li>)}</ul>
+        </section>
+    </div>
+</GridLayout>

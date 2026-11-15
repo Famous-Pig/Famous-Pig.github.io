@@ -9,21 +9,39 @@ import { getSortedPosts } from "@utils/post";
 import Pagination from "@components/pagination.astro";
 import PostPage from "@components/postPage.astro";
 import GridLayout from "@layouts/grid.astro";
+import CompactCharityCard from "@components/post/compactCharityCard.astro";
+import Announcement from "@components/sidebar/announcement.astro";
 
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allBlogPosts = await getSortedPosts();
-    return paginate(allBlogPosts, { pageSize: PAGE_SIZE });
+    const featuredPost = allBlogPosts.find(entry => entry.id === "help-missing-children-home" && entry.data.pinned);
+    const regularPosts = allBlogPosts.filter(entry => entry.id !== featuredPost?.id);
+    return paginate(regularPosts, { pageSize: PAGE_SIZE, props: { featuredPost } });
 }) satisfies GetStaticPaths;
 // https://github.com/withastro/astro/issues/6507#issuecomment-1489916992
 
 
-const { page } = Astro.props;
+const { page, featuredPost } = Astro.props;
 
 const len = page.data.length;
 ---
 
 <GridLayout>
+    {page.currentPage === 1 && (
+        <div class:list={["home-feature-row mb-4", { "has-feature": !!featuredPost }]}>
+            {featuredPost && <CompactCharityCard entry={featuredPost} />}
+            <Announcement compact={true} />
+        </div>
+    )}
     <PostPage page={page}></PostPage>
     <Pagination class="mx-auto onload-animation-up" page={page} style={`animation-delay: ${(len)*50}ms`}></Pagination>
 </GridLayout>
+
+<style>
+    .home-feature-row { display: grid; gap: 1rem; align-items: stretch; }
+    @media (min-width: 900px) {
+        .home-feature-row.has-feature { grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr); }
+        .home-feature-row:has(:global(#home-announcement[style*="display: none"])) { grid-template-columns: minmax(0, 1fr); }
+    }
+</style>

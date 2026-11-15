@@ -6,6 +6,7 @@ import { skillsData } from "./skills";
 import { timelineData } from "./timeline";
 import { i18n } from "../i18n/translation";
 import I18nKey from "../i18n/i18nKey";
+import { getPostUrl } from "./url";
 
 
 export interface DirectoryNode {
@@ -45,7 +46,7 @@ export async function getDirectoryTree(): Promise<DirectoryNode[]> {
         const fileName = parts.pop()!;
         // 目录直接列出文章，磁盘上的资源文件夹不作为导航层级。
         const paths = [rootMap.posts];
-        addNode(paths, post.data.title || fileName, `/posts/${post.id}/`);
+        addNode(paths, post.data.title || fileName, getPostUrl(post));
     }
 
     for (const album of sortedAlbums) {
@@ -81,6 +82,11 @@ export async function getDirectoryTree(): Promise<DirectoryNode[]> {
         if (basePathParts[0] === 'timeline') basePathParts[0] = rootMap.timeline;
         addNode(basePathParts, item.title || item.id, `/timeline/`);
     }
+
+    addNode(["统计"], "文章概览", "/statistics/");
+    addNode(["统计"], "发布活动", "/statistics/#activity-statistics-page");
+    addNode(["统计"], "分类分布", "/statistics/#category-statistics-page");
+    addNode(["统计"], "标签分布", "/statistics/#tag-statistics-page");
 
     function toArray(obj: Record<string, any>): DirectoryNode[] {
         const arr = Object.values(obj).map(node => {

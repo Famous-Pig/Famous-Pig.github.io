@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import { getPostUrl } from "@utils/url";
+interface Props { entry: CollectionEntry<"posts">; }
+const { entry } = Astro.props;
+---
+
+<article id="home-charity-post" class="card-base rounded-(--radius-large) px-5 py-4 flex flex-col justify-center min-w-0">
+    <div class="flex items-center gap-2 text-xs font-medium text-(--primary) mb-2">
+        <Icon name="mdi:pin" class="text-base" />
+        <span>置顶 · 公益文章</span>
+    </div>
+    <h2 class="text-xl md:text-2xl font-bold text-90 mb-2">
+        <a href={getPostUrl(entry)} class="hover:text-(--primary) transition-colors">{entry.data.title}</a>
+    </h2>
+    <p class="text-sm text-75 leading-relaxed">{entry.data.description}</p>
+</article>

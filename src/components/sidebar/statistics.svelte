@@ -20,6 +20,7 @@
         class: className = "",
         style = "",
         side = "default",
+        fullPage = false,
     }: {
         posts?: any[],
         categories?: any[],
@@ -27,6 +28,7 @@
         class?: string,
         style?: string,
         side?: string,
+        fullPage?: boolean,
     } = $props();
 
     const labels = {
@@ -56,6 +58,7 @@
     let lastScale = $state<'year' | 'month' | 'day'>('year');
     let isDark = $state(false);
     let isDesktop = $state(true);
+    const showRadarCharts = $derived(fullPage || isDesktop);
 
     const updateIsDesktop = () => {
         if (typeof window !== 'undefined') {
@@ -124,7 +127,7 @@
         isInitialized = true;
         // 依次初始化图表
         await initActivityChart();
-        if (isDesktop) {
+        if (showRadarCharts) {
             await initCategoriesChart();
             await initTagsChart();
         }
@@ -426,8 +429,8 @@
             
             heatmapChart?.resize();
             
-            if (isDesktop) {
-                if (wasDesktop) {
+            if (showRadarCharts) {
+                if (wasDesktop || fullPage) {
                     categoriesChart?.resize();
                     tagsChart?.resize();
                 } else {
@@ -445,7 +448,7 @@
                 isDark = newIsDark;
                 if (isInitialized) {
                     initActivityChart(true);
-                    if (isDesktop) initRadarCharts();
+                    if (showRadarCharts) initRadarCharts();
                 }
             }
         });
@@ -469,13 +472,13 @@
     });
 </script>
 
-<div id={`statistics-${side}`} data-swup-persist={`statistics-${side}`} bind:this={container} class={"pb-4 card-base " + className} {style}>
+<div id={`statistics-${side}`} data-swup-persist={fullPage ? undefined : `statistics-${side}`} bind:this={container} class={"pb-4 card-base " + className} class:full-page={fullPage} {style}>
     <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
         before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
         before:absolute before:left-[-16px] before:top-[5.5px]">{labels.statistics}</div>
     <div class="px-4 overflow-hidden relative min-h-[180px]">
         <div class="stats-charts">
-            <div class="chart-section heatmap-section">
+            <div id={`activity-statistics-${side}`} class="chart-section heatmap-section scroll-mt-24">
                 {#if isHeatmapLoading}
                     <div class="absolute inset-0 flex items-center justify-center z-10 bg-(--card-bg)/50 backdrop-blur-[1px]">
                         <div class="text-(--primary) flex items-center justify-center">
@@ -501,8 +504,8 @@
                 <div bind:this={heatmapContainer} class="heatmap-container transition-opacity duration-600" class:opacity-0={isHeatmapLoading}></div>
             </div>
 
-            {#if isDesktop}
-                <div class="chart-section radar-section">
+            {#if showRadarCharts}
+                <div id={`category-statistics-${side}`} class="chart-section radar-section scroll-mt-24">
                     {#if isCategoriesLoading}
                         <div class="absolute inset-0 flex items-center justify-center z-10 bg-(--card-bg)/50 backdrop-blur-[1px]">
                             <div class="text-(--primary) flex items-center justify-center">
@@ -513,7 +516,7 @@
                     <div bind:this={categoriesContainer} class="radar-container transition-opacity duration-600" class:opacity-0={isCategoriesLoading}></div>
                 </div>
 
-                <div class="chart-section radar-section">
+                <div id={`tag-statistics-${side}`} class="chart-section radar-section scroll-mt-24">
                     {#if isTagsLoading}
                         <div class="absolute inset-0 flex items-center justify-center z-10 bg-(--card-bg)/50 backdrop-blur-[1px]">
                             <div class="text-(--primary) flex items-center justify-center">
@@ -529,6 +532,9 @@
 </div>
 
 <style>
+    .full-page .stats-charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 1rem 0; }
+    .full-page .heatmap-section { grid-column: 1 / -1; }
+    @media (max-width: 767px) { .full-page .stats-charts { grid-template-columns: minmax(0, 1fr); } }
     .stats-charts {
         display: flex;
         flex-direction: column;
