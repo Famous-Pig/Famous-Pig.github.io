@@ -16,9 +16,11 @@ import type {
 export type AnalyticsConfig = {
     enabled: boolean;
     platform: "umami";
+    counter: {
+        enabled: boolean;
+        apiUrl: string;
+    };
     umami: {
-        apiKey: string;
-        baseUrl: string;
         code: string;
     };
 };

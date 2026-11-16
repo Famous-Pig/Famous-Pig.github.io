@@ -151,16 +151,16 @@ site:
 
 # 统计配置
 analytics:
-    # 是否启用统计
+    # 是否启用 Umami 后台采集（与前台计数独立）
     enabled: true
     # 统计平台
     platform: "umami"
-    # Umami 统计配置
+    # Vercount 免费前台计数
+    counter:
+        enabled: true
+        apiUrl: "https://events.vercount.one/api/v2/log"
+    # Umami 后台采集（不再使用查询 API 或 API 密钥）
     umami:
-        # Umami API 地址
-        baseUrl: "https://api.umami.is"
-        # API 密钥
-        apiKey: 'api_KvrRKYGvzoIwOAaf7tlv3FikOpRMedVd'
         # Tracking code
         code: '<script defer src="https://cloud.umami.is/script.js" data-website-id="2936d942-01aa-49f6-a9a2-a847f8cf9be3"></script>'
 

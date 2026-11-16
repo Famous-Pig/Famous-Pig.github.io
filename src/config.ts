@@ -89,9 +89,11 @@ export const siteConfig: SiteConfig = config.site;
 export const analyticsConfig: AnalyticsConfig = {
     enabled: config.analytics.enabled,
     platform: config.analytics.platform,
+    counter: config.analytics.counter ?? {
+        enabled: true,
+        apiUrl: "https://events.vercount.one/api/v2/log",
+    },
     umami: {
-        apiKey: config.analytics.umami.apiKey ?? import.meta.env.UMAMI_API_KEY,
-        baseUrl: config.analytics.umami.baseUrl,
         code: config.analytics.umami.code ?? import.meta.env.UMAMI_TRACKING_CODE,
     }
 };

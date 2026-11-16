@@ -116,7 +116,7 @@ const bannerOffsetByPosition = {
 const bannerOffset =
     bannerOffsetByPosition[siteConfig.wallpaper.position || "center"];
 
-const { enabled: analyticsEnabled, code: analyticsCode } = getAnalyticsConfig();
+const { enabled: analyticsEnabled, code: analyticsCode, counter } = getAnalyticsConfig();
 ---
 
 <!DOCTYPE html>
@@ -231,6 +231,11 @@ const { enabled: analyticsEnabled, code: analyticsCode } = getAnalyticsConfig();
         <slot />
         <!-- Analytics -->
         {analyticsEnabled && analyticsCode && <Fragment set:html={analyticsCode} />}
+        {counter.enabled && <div id="vercount-config" data-api-url={counter.apiUrl} hidden />}
+        <script>
+            import { initVercount } from "@/plugins/vercount";
+            initVercount();
+        </script>
         <!-- Music Player - 仅在启用时加载 -->
         {musicPlayerConfig.enable && <MusicPlayer client:idle />}
         <!-- Pio 看板娘组件 - 如果启用了侧边栏，可能需要调整 z-index -->
