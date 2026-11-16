@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # private config
 .env
+.elog.env
+elog.cache.json
+elog.cache.json.bak

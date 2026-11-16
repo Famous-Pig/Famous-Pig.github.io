@@ -11,7 +11,9 @@
 		"build": "node scripts/generate-icons.js && node scripts/build-with-pagefind.cjs",
 		"preview": "astro preview",
 		"astro": "astro",
-		"new-post": "node scripts/new-post.js"
+		"new-post": "node scripts/new-post.js",
+		"sync:local": "elog sync -c elog.config.cjs -e .elog.env",
+		"sync:full": "elog sync -c elog.config.cjs -e .elog.env --disable-cache"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.6",
@@ -72,6 +74,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/ts-plugin": "^1.10.6",
+		"@elog/cli": "0.14.7",
 		"@iconify-json/mdi": "^1.2.3",
 		"@rollup/plugin-yaml": "^4.1.2",
 		"@types/hast": "^3.0.4",
