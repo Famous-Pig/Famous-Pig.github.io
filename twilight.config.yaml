@@ -255,7 +255,7 @@ sidebar:
 # 资料配置
 profile:
     # 头像配置 (相对于 /public 目录)
-    avatar: "/assets/images/avatar.jpg"
+    avatar: "/assets/images/avatar-takagi.png"
     # 信息配置
     name: "名猪"
     # 简介配置
