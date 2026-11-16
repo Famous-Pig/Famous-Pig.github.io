@@ -7,6 +7,7 @@ import { timelineData } from "./timeline";
 import { i18n } from "../i18n/translation";
 import I18nKey from "../i18n/i18nKey";
 import { getPostUrl } from "./url";
+import { getCategoryPathParts } from "./category";
 
 
 export interface DirectoryNode {
@@ -31,12 +32,13 @@ export async function getDirectoryTree(): Promise<DirectoryNode[]> {
     function addNode(paths: string[], name: string, url: string) {
         let current = tree;
         for (const part of paths) {
-            if (!current[part]) {
-                current[part] = { name: part, type: 'folder', children: {} };
+            const key = `folder:${part}`;
+            if (!current[key]) {
+                current[key] = { name: part, type: 'folder', children: {} };
             }
-            current = current[part].children;
+            current = current[key].children;
         }
-        current[name] = { name, type: 'file', url };
+        current[`file:${name}:${url}`] = { name, type: 'file', url };
     }
 
     const posts = await getSortedPosts();
@@ -44,8 +46,8 @@ export async function getDirectoryTree(): Promise<DirectoryNode[]> {
         if (post.data.draft) continue;
         const parts = post.id.split('/');
         const fileName = parts.pop()!;
-        // 目录直接列出文章，磁盘上的资源文件夹不作为导航层级。
-        const paths = [rootMap.posts];
+        // 按文章分类分组；没有分类的文章仍直接显示在“文章”下。
+        const paths = [rootMap.posts, ...(getCategoryPathParts(post.data.category) ?? [])];
         addNode(paths, post.data.title || fileName, getPostUrl(post));
     }
 

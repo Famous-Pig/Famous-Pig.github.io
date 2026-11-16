@@ -6,6 +6,8 @@ import { getCategoryPathLabel, getCategoryPathParts } from "@utils/category";
 import { parseTags } from "@utils/tag";
 import { i18n } from "@i18n/translation";
 import I18nKey from "@i18n/i18nKey";
+import { CATEGORY_NOTICES } from "@constants/category-notices";
+import CategoryNotice from "./categoryNotice.svelte";
 
 
 interface Post {
@@ -33,6 +35,9 @@ let { sortedPosts = [] }: Props = $props();
 let tags = $state<string[]>([]);
 let categories = $state<string[]>([]);
 let uncategorized = $state<string | null>(null);
+let categoryNotices = $derived([...new Set(categories
+    .map(category => CATEGORY_NOTICES[getCategoryPathParts(category)?.[0] ?? ""])
+    .filter(Boolean))]);
 
 onMount(() => {
     const params = new URLSearchParams(window.location.search);
@@ -122,6 +127,9 @@ let groups = $derived.by(() => {
 </script>
 
 <div>
+    {#each categoryNotices as message}
+        <CategoryNotice {message} />
+    {/each}
     {#each groups as group}
         <div>
             <div class="flex flex-row w-full items-center h-15">

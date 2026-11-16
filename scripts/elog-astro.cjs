@@ -1,4 +1,5 @@
 const yaml = require('js-yaml');
+const { getCategory } = require('./elog-source.cjs');
 
 // Elog has already extracted Yuque Front Matter and replaced body image URLs.
 async function format(doc, imageClient) {
@@ -12,7 +13,7 @@ async function format(doc, imageClient) {
     published,
     ...(p.updated ? { updated: p.updated } : {}),
     description: p.description || '',
-    category: '数据结构',
+    category: getCategory(process.env.YUQUE_CATEGORY),
     tags: p.tags || [],
     draft: p.draft ?? false,
   };

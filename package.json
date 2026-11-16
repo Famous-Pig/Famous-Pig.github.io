@@ -12,8 +12,9 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"new-post": "node scripts/new-post.js",
-		"sync:local": "elog sync -c elog.config.cjs -e .elog.env",
-		"sync:full": "elog sync -c elog.config.cjs -e .elog.env --disable-cache"
+		"sync:local": "node scripts/sync-yuque.cjs",
+		"sync:full": "node scripts/sync-yuque.cjs --full",
+		"test:yuque": "node --test scripts/test-yuque-sync.cjs"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.6",

@@ -14,8 +14,8 @@
 
     function isPathActive(nodeUrl?: string): boolean {
         if (!nodeUrl || !currentPath) return false;
-        const normalizedCurrent = currentPath.replace(/\/$/, "");
-        const normalizedNode = nodeUrl.replace(/\/$/, "");
+        const normalizedCurrent = decodeURI(currentPath).replace(/\/$/, "");
+        const normalizedNode = decodeURI(nodeUrl).replace(/\/$/, "");
         return normalizedCurrent === normalizedNode;
     }
 

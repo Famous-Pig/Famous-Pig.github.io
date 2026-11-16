@@ -1,4 +1,5 @@
 const path = require('node:path');
+const { getSource } = require('./scripts/elog-source.cjs');
 
 const auth = process.env.YUQUE_AUTH || 'token';
 if (!['token', 'password'].includes(auth)) {
@@ -10,10 +11,11 @@ const missing = required.filter((key) => !process.env[key]?.trim());
 if (missing.length) {
   throw new Error(`请先在 .elog.env 填写：${missing.join(', ')}。详见 docs/yuque-sync.md。`);
 }
-const host = (process.env.YUQUE_HOST || 'https://www.yuque.com').replace(/\/+$/, '');
+const source = getSource(process.env);
+const { host } = source;
 const common = {
-  login: process.env.YUQUE_LOGIN,
-  repo: process.env.YUQUE_REPO,
+  login: source.login,
+  repo: source.repo,
   onlyPublic: process.env.YUQUE_ONLY_PUBLIC !== 'false',
   onlyPublished: true,
   limit: 2,
@@ -35,7 +37,7 @@ module.exports = {
   deploy: {
     platform: 'local',
     local: {
-      outputDir: './src/content/posts/数据结构',
+      outputDir: source.outputDir,
       filename: 'urlname',
       format: 'markdown',
       formatExt: path.join(__dirname, 'scripts/elog-astro.cjs'),
