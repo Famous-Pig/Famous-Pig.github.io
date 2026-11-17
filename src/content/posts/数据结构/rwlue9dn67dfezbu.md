@@ -4,7 +4,7 @@ published: '2026-04-17 14:30:35'
 updated: '2026-06-13 21:08:56'
 description: 单链表应用1-找到链表倒数第k个节点使用双指针（快慢指针）
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/8c3b6f9db452b635762ab493b2d63ce1.png
 ---

@@ -4,7 +4,7 @@ published: '2026-04-24 11:06:11'
 updated: '2026-06-14 18:27:15'
 description: 最小生成树-普里姆算法（Prim）普里姆（Prim）算法是图论中求解最小生成树（MST）的经典贪心算法，适用于加权无向连通图。它从一个起点出发，每次选连接 “树内 - 树外” 的最小权边扩展，直到囊括所有顶点。
 category: 数据结构
-tags: []
+tags: ["数据结构","算法"]
 draft: false
 cover: /images/yuque/d70086eded53822cb6257ea54e22149e.png
 ---

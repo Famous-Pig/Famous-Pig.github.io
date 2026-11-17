@@ -4,7 +4,7 @@ published: '2026-04-22 21:15:25'
 updated: '2026-05-13 11:23:20'
 description: 引入对于上面的表格，可以做一个二叉树，如下：if(a &lt; 60) b = “不及格”; else if(a &lt; 70) b = “及格”; else if(a &lt; 80) b = “中等”; else if(a &lt; 90) b = “良好”； else b = “优秀”;但这样效率比较低，如果...
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/4e3acf33b570f7a1913b790bc3012eec.png
 ---

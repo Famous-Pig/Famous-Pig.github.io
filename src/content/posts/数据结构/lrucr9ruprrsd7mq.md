@@ -4,7 +4,7 @@ published: '2026-04-23 23:13:26'
 updated: '2026-04-24 10:11:18'
 description: 图的定义图是由顶点的有穷非空集合和顶点之间边的集合组成的。通记为 G(V, E)，其中 G 表示一个图，V 是图 G 中顶点的集合，E 是边的集合 V(G) 和 E(G) 通常分别表示图 G 的顶点集合和边集合。注意：对于图这种数据结构，不允许没有顶点，但边集可以为空。无向图与有向图
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/52f11d4d7cf5abba0bf635804cafcba3.png
 ---

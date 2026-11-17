@@ -4,7 +4,7 @@ published: '2026-04-16 19:23:32'
 updated: '2026-06-05 20:51:55'
 description: '函数函数的四种形式无参数，无返回值#include  /*需求： 计算1加到100的值并输出结果 */ void fun() { int sum = 0; for (int i = 1; i '
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/8477caf36999cc1573910d9385ac5ebd.png
 ---

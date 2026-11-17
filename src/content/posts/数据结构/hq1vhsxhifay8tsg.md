@@ -4,7 +4,7 @@ published: '2026-04-20 14:48:38'
 updated: '2026-06-09 14:47:26'
 description: 树是一个或多个结点的有限集合存在一个称为根的特定结点其余的结点被分为 n 个互不相交的集合 T1, T2, …, Tn, 其中的每个集合都是一棵树。T1, T2, …, Tn称为根节点的子树。 树的基本性质性质一：树中所有结点数等于所有结点
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/bcf841fd4180a91cf6cfa1a362edbcfe.png
 ---

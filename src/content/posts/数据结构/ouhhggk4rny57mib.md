@@ -4,7 +4,7 @@ published: '2026-04-17 10:52:32'
 updated: '2026-06-12 15:22:03'
 description: 单链表-初始化//定义一个 “链表节点”，每个节点包含：数据 + 指向下一个节点的指针 typedef int ElemType; typedef struct node{ ElemType data; struct node *next; }Node;Node* initList() { /...
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/ceba0974dde0523907cee525c99b711e.png
 ---

@@ -4,7 +4,7 @@ published: '2026-04-20 14:59:53'
 updated: '2026-06-12 15:07:34'
 description: 二叉树基本形态二叉树的性质性质一：二叉树的第i层最多有2i-1（i&gt;=1）个结点性质二：深度为k的二叉树最多有2
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/c5e5857a2ffa7379e7491d3aa9fc47d8.png
 ---

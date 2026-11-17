@@ -4,7 +4,7 @@ published: 2026-11-15
 description: 为寻亲多添一份希望。精选宝贝回家官方资料，每月人工复核一次，状态以官方原帖为准。
 pinned: true
 category: 公益
-tags: [公益, 寻亲]
+tags: [寻亲]
 comment: false
 draft: false
 ---

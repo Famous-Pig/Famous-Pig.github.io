@@ -4,7 +4,7 @@ published: '2026-04-20 13:45:24'
 updated: '2026-06-09 14:22:20'
 description: 字符串匹配-朴素匹配朴素匹配的时间复杂度： O((n-m+1) * m)
 category: 数据结构
-tags: []
+tags: ["数据结构","算法"]
 draft: false
 cover: /images/yuque/92390f1883e884bf245ef3a1e5f63ec2.png
 ---

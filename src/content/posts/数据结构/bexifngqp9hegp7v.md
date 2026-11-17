@@ -4,7 +4,7 @@ published: '2026-04-22 20:40:08'
 updated: '2026-06-09 15:01:35'
 description: '通过遍历可以得到二叉树的线性排列但这样线性序列只有在遍历时才能得到将二叉树线索化得到线索二叉树可以解决这个问题线索化：利用叶节点的空余空间记录前驱、后继二叉树的线索化按照中序遍历来线索化#include  #include  typedef char El'
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/957276f5a75af886a9eb1f0cd022e0ff.png
 ---

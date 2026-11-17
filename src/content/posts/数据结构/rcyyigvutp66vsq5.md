@@ -4,7 +4,7 @@ published: '2026-04-20 14:30:27'
 updated: '2026-06-09 14:46:33'
 description: 对称矩阵上三角矩阵下三角矩阵三对角矩阵稀疏矩阵对称矩阵上三角矩阵
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/cb661fb226c326d0fe87f47fb3c77b5d.png
 ---

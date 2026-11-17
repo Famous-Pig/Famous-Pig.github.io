@@ -6,6 +6,14 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const yaml = require('js-yaml');
 const { getSource, getCategory, assertCategoryOwner } = require('./elog-source.cjs');
+const { getPostTags } = require('./post-tags.cjs');
+
+test('学习笔记同步时补充相关标签并保留自定义标签', () => {
+  assert.deepEqual(getPostTags('数据结构', '链表'), ['数据结构']);
+  assert.deepEqual(getPostTags('数据结构', '简单的排序算法', ['C语言', '算法']), ['C语言', '算法', '数据结构']);
+  assert.deepEqual(getPostTags('数据结构', '字符串匹配'), ['数据结构', '算法']);
+  assert.deepEqual(getPostTags('操作系统', '调度算法', ['笔记']), ['笔记']);
+});
 
 test('知识库的缓存隔离，分类不能被其他知识库占用', () => {
   const env = { YUQUE_LOGIN: 'fixture', YUQUE_REPO: 'structures' };

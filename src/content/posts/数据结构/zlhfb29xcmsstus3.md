@@ -4,7 +4,7 @@ published: '2026-04-19 23:24:59'
 updated: '2026-06-15 00:24:13'
 description: q枚举将变量的值一一列举出来，变量的值只限于列举出来的值的范围内在枚举中列出的每一个值，称为枚举元素每一个枚举元素由系统定义了一个用序号表示的数值，从 0 开始，分别为 0，1，2 … 语法：enum 枚举名 { 枚举元素... }#include  enum weekday...
 category: 数据结构
-tags: []
+tags: ["数据结构","算法"]
 draft: false
 cover: /images/yuque/7d7f83afd74eb1e620c7ce44a5518ec9.png
 ---

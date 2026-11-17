@@ -4,7 +4,7 @@ published: '2026-04-17 21:02:08'
 updated: '2026-06-08 16:26:01'
 description: 循环链表（Circular Linked List）是另一种形式的链式存储结构。其特点是表中最后一个节点的指针域指向头节点，整个链表形成一个环当链表遍历时，判别当前指针 p 是否指向表尾结点的终止条件不同在单链表中，判别条件为 p!=NULL 或 p-&gt;next!=NULL，而循环单链表的判别...
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/4563d0d1de1d88d0cdcf54319ab5a1f2.png
 ---

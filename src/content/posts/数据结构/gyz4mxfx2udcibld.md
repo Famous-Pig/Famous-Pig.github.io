@@ -4,7 +4,7 @@ published: '2026-04-24 10:12:41'
 updated: '2026-06-14 18:56:40'
 description: '邻接矩阵/邻接表邻接矩阵-无向#include  typedef char VertexType; // 顶点类型 typedef int EdgeType; // 边的权值类型（0 或 1） #define MAXSIZE 100 // 最大顶点数 // 图的邻接矩阵结构体...'
 category: 数据结构
-tags: []
+tags: ["数据结构","算法"]
 draft: false
 cover: /images/yuque/d72514a7e4b76d0ce1e98c21b6c27157.png
 ---

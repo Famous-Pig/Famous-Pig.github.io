@@ -4,7 +4,7 @@ published: '2026-04-18 23:59:31'
 updated: '2026-06-09 11:10:32'
 description: 栈的介绍栈（stack）是限定仅在表尾进行插入或删除操作的线性表。因此对栈来说，表尾端有其特殊含义，称为栈顶（top），相应地，表头端称为栈底（bottom）。不含元素的空表称为空栈假设 S=(a1, a2, …, an)，则称 a1 为栈底元素，an 为栈顶元素。栈中元素按 a1, a2, ...
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/32ce17a8aa848e3631651074ee59ca80.png
 ---

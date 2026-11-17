@@ -4,7 +4,7 @@ published: '2026-04-19 23:10:06'
 updated: '2026-06-09 14:14:14'
 description: '函数调用过程中，调用自己本身计算 1~n 的和-非递归方式int fun(int n) { int sum = 0; for (int i = 1; i '
 category: 数据结构
-tags: []
+tags: ["数据结构","算法"]
 draft: false
 cover: /images/yuque/e94690e5a385d43971f6935c52c9bfe5.png
 ---

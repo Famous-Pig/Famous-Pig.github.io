@@ -4,7 +4,7 @@ published: '2026-04-16 20:00:42'
 updated: '2026-06-04 22:59:27'
 description: 头文件头文件就是：告诉编译器有哪些函数、常量、结构体可以用。没有头文件，编译器不认识 printf、scanf
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 ---
 

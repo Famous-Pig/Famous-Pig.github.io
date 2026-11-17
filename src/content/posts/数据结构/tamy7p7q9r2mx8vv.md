@@ -4,7 +4,7 @@ published: '2026-04-23 22:26:59'
 updated: '2026-05-13 11:23:52'
 description: 树 -&gt; 二叉树
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/c66274d707a9b51713687eadbb21b709.png
 ---

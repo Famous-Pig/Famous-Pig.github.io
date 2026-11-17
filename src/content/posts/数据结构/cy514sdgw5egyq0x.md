@@ -4,7 +4,7 @@ published: '2026-04-20 14:13:38'
 updated: '2026-06-09 14:46:16'
 description: 一维数组int main() { int a[] = {16, 47, 89, 42, 38}; }二维数组数据类型 数组名[数组长度][数组长度]int a[5][6]; char ch[3][4]; float f[3][5];数据类型 数组名[数组长度][数组长度] = {元素 1, 元...
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/6cdfa112c23f7ea171e3ef8b32b674da.png
 ---

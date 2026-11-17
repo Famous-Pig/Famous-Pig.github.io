@@ -4,7 +4,7 @@ published: '2026-04-17 09:59:05'
 updated: '2026-06-07 02:09:54'
 description: 用一组连续的内存单元依次存储线性表的各个元素，也就是说，逻辑上相邻的元素，实际的物理存储空间也是连续的顺序表存储结构#define MAXSIZE 100 typedef int ElemType; //给int起个别名ElemType（元素类型），以后可以改为其他类型 typedef str...
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/1a9b8973be6e3fe3df8f704520ba600e.png
 ---

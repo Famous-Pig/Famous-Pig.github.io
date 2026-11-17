@@ -4,7 +4,7 @@ published: '2026-04-29 10:39:51'
 updated: '2026-06-10 19:31:17'
 description: 在一个表示工程的有向图中，用顶点表示活动，用弧表示活动之间的优先级，这样的有向图为顶点表示活动的网，我们称为 AOV 网（Activity On Vertex Network）拓扑排序
 category: 数据结构
-tags: []
+tags: ["数据结构","算法"]
 draft: false
 cover: /images/yuque/def2c59a72e80e7561bced0b797de179.png
 ---

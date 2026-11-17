@@ -4,7 +4,7 @@ published: '2026-04-19 01:13:16'
 updated: '2026-06-15 00:37:34'
 description: 队列（queue）是一种先进先出（First In First Out, FIFO）的线性表。它只允许在表的一端进行插入，而在另一端删除元素。在队列中，允许插入的一端称为队尾（rear）,允许删除的一端则称为队头（front）。假设队列为 q = (a1, a2, …, an)，那么，a1 就...
 category: 数据结构
-tags: []
+tags: ["数据结构"]
 draft: false
 cover: /images/yuque/76227fd8e51b6f265a856300f1834c4c.png
 ---
